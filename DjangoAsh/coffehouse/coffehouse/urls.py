@@ -17,8 +17,10 @@ from django.contrib import admin
 #Add re_path and include
 from django.urls import path, re_path, include
 
-#add path('', include('coffe_app.urls'))
 urlpatterns = [
+    #add after install docutils 
+    path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
+    #add path('', include('coffe_app.urls')) after add urls.py in coffe_app folder
     path('', include('coffe_app.urls')),
 ]
