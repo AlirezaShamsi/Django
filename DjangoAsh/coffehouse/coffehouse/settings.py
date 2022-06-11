@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #Add django.contrib.admindocs after urls.py in coffehouse
+    'django.contrib.admindocs',
+    #Add coffe_app after urls.py in coffehouse
     'coffe_app',
     'django.contrib.admin',
     'django.contrib.auth',
