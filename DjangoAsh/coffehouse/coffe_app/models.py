@@ -1,5 +1,7 @@
-from audioop import add
+from pyexpat import model
 from django.db import models
+from datetime import date
+from django.utils import timezone
 
 
 #Evoid to submit null data or blank
@@ -16,6 +18,16 @@ class Store(models.Model):
     state = models.CharField(max_length=2, default="UK")
     ## object variable is added by default, not required explicitly
     #objects = models.Manager()
+
+    #Add date
+    my_date = models.DateField(default=date.today)
+    my_datetime = models.DateTimeField(default=timezone.now)
+    date_lastupdated = models.DateField(auto_now=True)
+    date_added = models.DateField(auto_now_add=True)
+    timestamp_lastupdated = models.DateTimeField(auto_now=True)
+    timestamp_added = models.DateTimeField(auto_now_add=True)
+
+
     def __str__(self):
         return "%s (%s, %s)"%(self.name, self.city, self.state)
         #also you can use python format function
