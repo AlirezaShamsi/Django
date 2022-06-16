@@ -1,8 +1,15 @@
-from pyexpat import model
 from django.db import models
 from datetime import date
 from django.utils import timezone
 
+
+#our choices option is a List of values as a Tuple of Tuples: (key, Value)
+ITEM_SIZE = (
+    ('U', 'Unkown'),
+    ('S', 'Small'),
+    ('M', 'Medium'),
+    ('L', 'Large'),
+)
 
 #Evoid to submit null data or blank
 def default_city():
@@ -26,6 +33,14 @@ class Store(models.Model):
     date_added = models.DateField(auto_now_add=True)
     timestamp_lastupdated = models.DateTimeField(auto_now=True)
     timestamp_added = models.DateTimeField(auto_now_add=True)
+
+    #Add size of city
+    size = models.CharField(choices=ITEM_SIZE, max_length=1, default='U')
+    #or
+    #size = models.CharField(choices=ITEM_SIZE, max_length=1)
+
+    ## object variable is added by default, not required explicitly
+    #objects = models.Manager()
 
 
     def __str__(self):
