@@ -1,6 +1,8 @@
 from django.db import models
 from datetime import date
 from django.utils import timezone
+from django.core.validators import MinLengthValidator, MaxLengthValidator
+from django.core.validators import RegexValidator
 
 
 #our choices option is a List of values as a Tuple of Tuples: (key, Value)
