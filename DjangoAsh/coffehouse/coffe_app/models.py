@@ -3,6 +3,7 @@ from datetime import date
 from django.utils import timezone
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.core.validators import RegexValidator
+from django.core.exceptions import ValidationError
 
 
 #our choices option is a List of values as a Tuple of Tuples: (key, Value)
@@ -55,3 +56,9 @@ class Contact(models.Model):
     mobile_validation = RegexValidator(regex=r'^09\d{9}$', code = "Invalid", message = "Phone number must be entered in the format:'09999999999'. Up to 11 digits allowd.")
     mobile = models.CharField(max_length=11, blank=False, null=False, help_text="Mobile number", validators=[mobile_validation], error_messages={'required': "Enter your mobile number", 'max_length':"Enter exactly 11 digit"})
 
+
+def calorie_watcher(value):
+    if value>5000:
+        raise ValidationError(('calories are %(value)s ? We try to serbe health food, try something less'), params={'value':value},)
+    if value<0:
+        raise ValidationError(('calories are %(value)s ? This can\'t be , value must be greater than 0'), params={'value':value},)
