@@ -49,3 +49,9 @@ class Store(models.Model):
         return "%s (%s, %s)"%(self.name, self.city, self.state)
         #also you can use python format function
         ##return "{}({}, {})", format(self.name, self.city, self.state)
+
+#create class for mobile validation
+class Contact(models.Model):
+    mobile_validation = RegexValidator(regex=r'^09\d{9}$', code = "Invalid", message = "Phone number must be entered in the format:'09999999999'. Up to 11 digits allowd.")
+    mobile = models.CharField(max_length=11, blank=False, null=False, help_text="Mobile number", validators=[mobile_validation], error_messages={'required': "Enter your mobile number", 'max_length':"Enter exactly 11 digit"})
+
