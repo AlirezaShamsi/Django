@@ -1,3 +1,5 @@
+from pyexpat import model
+from statistics import mode
 from django.db import models
 from datetime import date
 from django.utils import timezone
@@ -62,3 +64,10 @@ def calorie_watcher(value):
         raise ValidationError(('calories are %(value)s ? We try to serbe health food, try something less'), params={'value':value},)
     if value<0:
         raise ValidationError(('calories are %(value)s ? This can\'t be , value must be greater than 0'), params={'value':value},)
+
+
+class Item(models.Model):
+    name = models.CharField(max_length=30, validators=[MinLengthValidator(5), MaxLengthValidator(30)])
+    description = models.CharField(max_length=100)
+    size = models.CharField(choices=ITEM_SIZE, max_length=1)
+    calories = models.IntegerField(validators=[calorie_watcher])
