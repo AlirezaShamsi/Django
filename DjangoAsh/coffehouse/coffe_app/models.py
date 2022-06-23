@@ -71,7 +71,7 @@ class Menu(models.Model):
 
 class Item(models.Model):
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
-    name = models.CharField(max_length=30, validators=[MinLengthValidator(5), MaxLengthValidator(30)])
+    name = models.CharField(max_length=30, validators=[MinLengthValidator(5), MaxLengthValidator(30)], verbose_name="Menu Name")
     description = models.CharField(max_length=100, help_text="Ensure you probide some descriprion for your item")
     size = models.CharField(choices=ITEM_SIZE, max_length=1)
     calories = models.IntegerField(validators=[calorie_watcher], help_text="calorie count should reflect <b>size</b> of the item")
