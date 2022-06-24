@@ -23,3 +23,10 @@ my_store.address = 'SOHO st, No.9'
 ##record has id regerence from prior save() call, so operation is update 
 my_store.save()
 
+#using other database
+##my_store.save(using='replica1')
+
+#using update field
+##my_store.name = 'Ashix'
+##my_store.address = 'SOHO st, No.9'
+##my_store.save(update_fields=['name', 'address'])
