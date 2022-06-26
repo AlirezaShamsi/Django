@@ -1,7 +1,24 @@
+from contextlib import redirect_stderr
 import email
 from unicodedata import name
 from django.shortcuts import render
 from models import Store
+from django.contrib.auth.decorators import login_required
+from .models import Topic, Topic_intry
+from .forms import TopicForm , TopicEntryForm
+@login_required
+
+def new_topic(request):
+    if request.method != "POST":
+        form = TopicForm()
+    else:
+        form = TopicForm(data=request.Post)
+        if form.is_valid():
+            new_topic = form.save(commit = False)
+            new_topic.author = request.user
+            new_topic.save()
+            return redirect("blog_app:topic")
+    return render(request, 'blog_app/new_topic.html', context={'form':form})
 
 #showing a message in home page
 def show_home_page(request):
