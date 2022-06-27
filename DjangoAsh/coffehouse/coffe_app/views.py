@@ -1,8 +1,7 @@
-from contextlib import redirect_stderr
-import email
 from unicodedata import name
 from django.shortcuts import render
 from models import Store
+from models import Animal
 from django.contrib.auth.decorators import login_required
 from .models import Topic, Topic_intry
 from .forms import TopicForm , TopicEntryForm
@@ -47,3 +46,8 @@ my_store.save()
 ##my_store.name = 'Ashix'
 ##my_store.address = 'SOHO st, No.9'
 ##my_store.save(update_fields=['name', 'address'])
+
+
+instance1 = Animal()
+instance1.feed_animal()
+instance1.save()
