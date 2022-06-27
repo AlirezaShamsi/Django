@@ -77,4 +77,7 @@ class Item(models.Model):
     calories = models.IntegerField(validators=[calorie_watcher], help_text="calorie count should reflect <b>size</b> of the item")
 
 
-
+class Animal(models.Model):
+    is_hungry = models.BooleanField(default=True)
+    def feed_animal(self):
+        self.is_hungry = False
