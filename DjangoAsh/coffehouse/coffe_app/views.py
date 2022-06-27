@@ -49,5 +49,4 @@ my_store.save()
 
 
 instance1 = Animal()
-instance1.feed_animal()
 instance1.save()
