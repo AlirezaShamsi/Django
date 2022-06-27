@@ -81,3 +81,6 @@ class Animal(models.Model):
     is_hungry = models.BooleanField(default=True)
     def feed_animal(self):
         self.is_hungry = False
+    def save(self, *args, **kwargs):
+        self.feed_animal()
+        super(Animal, self).save(*args, **kwargs)
