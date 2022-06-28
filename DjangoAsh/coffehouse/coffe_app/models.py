@@ -1,11 +1,11 @@
-from pyexpat import model
-from statistics import mode
 from django.db import models
 from datetime import date
 from django.utils import timezone
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
+#for slug
+from django.utils.text import slugify
 
 
 #our choices option is a List of values as a Tuple of Tuples: (key, Value)
@@ -76,7 +76,7 @@ class Item(models.Model):
     size = models.CharField(choices=ITEM_SIZE, max_length=1)
     calories = models.IntegerField(validators=[calorie_watcher], help_text="calorie count should reflect <b>size</b> of the item")
 
-
+#for method save
 class Animal(models.Model):
     is_hungry = models.BooleanField(default=True)
     def feed_animal(self):
@@ -84,3 +84,11 @@ class Animal(models.Model):
     def save(self, *args, **kwargs):
         self.feed_animal()
         super(Animal, self).save(*args, **kwargs)
+
+#for slug
+class Topic(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(allow_unicode=True)
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title, allow_unicode=True)
+        super(Topic, self).save(*args,**kwargs)
