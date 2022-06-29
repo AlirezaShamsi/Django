@@ -1,3 +1,4 @@
+from pydoc import describe
 from django.db import models
 from datetime import date
 from django.utils import timezone
@@ -47,6 +48,12 @@ class Store(models.Model):
     ## object variable is added by default, not required explicitly
     #objects = models.Manager()
 
+    #add email 
+    email = models.EmailField()
+
+    #add amenity
+    ameneties = models.ManyToManyField('Amenity', blank=True)
+
 
     def __str__(self):
         return "%s (%s, %s)"%(self.name, self.city, self.state)
@@ -92,3 +99,8 @@ class Topic(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title, allow_unicode=True)
         super(Topic, self).save(*args,**kwargs)
+
+#for amenity
+class Amenity(models.Model):
+    name = models.CharField(max_length=30)
+    describtion = models.CharField(max_length=100)

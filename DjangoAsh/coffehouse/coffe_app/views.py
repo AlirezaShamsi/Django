@@ -50,3 +50,5 @@ my_store.save()
 
 instance1 = Animal()
 instance1.save()
+
+Instance.delete(id = 2)
