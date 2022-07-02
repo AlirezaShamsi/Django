@@ -26,7 +26,7 @@ class Store(models.Model):
     ##id = models.AutoField(primary_key=True) #Django < 3.2
     ##id = models.BigAutoField(primary_key=True) #Django > 3.2
     name = models.CharField(max_length=30)
-    address = models.CharField(max_length=50)
+    address = models.CharField(max_length=50, unique=True)
     city = models.CharField(max_length=30, default=default_city)
     state = models.CharField(max_length=2, default="UK")
     ## object variable is added by default, not required explicitly
