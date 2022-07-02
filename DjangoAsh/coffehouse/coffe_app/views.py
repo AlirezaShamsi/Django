@@ -1,4 +1,7 @@
+from inspect import Traceback
+import traceback
 from unicodedata import name
+from xml.dom import ValidationErr
 from django.shortcuts import render
 from models import Store
 from models import Animal
@@ -53,3 +56,8 @@ instance1.save()
 
 #for delete
 Instance.delete(id = 2)
+
+#clean_fields()
+store_corporate = Store(name="This is a very long name for the Corporate store that eceeds the 30 character limit.", address='England - London', city= 'London', state= 'UK', email='almator5@gmail.com')
+store_corporate.clean_fields()
+
