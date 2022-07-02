@@ -1,4 +1,3 @@
-from pydoc import describe
 from django.db import models
 from datetime import date
 from django.utils import timezone
@@ -25,10 +24,21 @@ class Store(models.Model):
     #id field is added by default, not required explicitly
     ##id = models.AutoField(primary_key=True) #Django < 3.2
     ##id = models.BigAutoField(primary_key=True) #Django > 3.2
-    name = models.CharField(max_length=30)
+
+    #add error_messages for review code
+    name = models.CharField(max_length=30, error_messages={'max_lengh':'Your input value is over 30 chars!!!'})
+    
+    #add unique for clean_fields()
     address = models.CharField(max_length=50, unique=True)
     city = models.CharField(max_length=30, default=default_city)
-    state = models.CharField(max_length=2, default="UK")
+    state = models.CharField(max_length=2, default="UK", error_messages=userdefined_error_msg)
+
+    #for error_messages
+    userdefined_error_msg={
+        'required': 'error message 1',
+        'max_length': 'error message 2',
+    }
+
     ## object variable is added by default, not required explicitly
     #objects = models.Manager()
 

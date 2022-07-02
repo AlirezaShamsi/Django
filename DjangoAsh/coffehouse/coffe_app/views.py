@@ -57,7 +57,15 @@ instance1.save()
 #for delete
 Instance.delete(id = 2)
 
-#clean_fields()
+#clean_fields() this code with erro
 store_corporate = Store(name="This is a very long name for the Corporate store that eceeds the 30 character limit.", address='England - London', city= 'London', state= 'UK', email='almator5@gmail.com')
 store_corporate.clean_fields()
+
+#output:
+"""
+Tracebace(most recent call last):
+    raise ValidationError(error)
+ValidationError:{'name':[u'Ensure this value has at most 30 characters(it has 84).']}
+
+"""
 
