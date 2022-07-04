@@ -1,3 +1,5 @@
+import email
+from unicodedata import name
 from django.db import models
 from datetime import date
 from django.utils import timezone
@@ -29,15 +31,20 @@ class Store(models.Model):
     name = models.CharField(max_length=30, error_messages={'max_lengh':'Your input value is over 30 chars!!!'})
     
     #add unique for clean_fields()
-    address = models.CharField(max_length=50, unique=True)
-    city = models.CharField(max_length=30, default=default_city)
-    state = models.CharField(max_length=2, default="UK", error_messages=userdefined_error_msg)
-
+    
     #for error_messages
     userdefined_error_msg={
         'required': 'error message 1',
         'max_length': 'error message 2',
     }
+    address = models.CharField(max_length=50, unique=True)
+    city = models.CharField(max_length=30, default=default_city)
+    state = models.CharField(max_length=2, default="UK", error_messages=userdefined_error_msg)
+
+    #clean method
+    def clean(self):
+        my_store=Store(name='Corporate', address='England-london', city='London', state='UK', email='almator5@gmail.com')
+
 
     ## object variable is added by default, not required explicitly
     #objects = models.Manager()
