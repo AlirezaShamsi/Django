@@ -1,10 +1,8 @@
-from inspect import Traceback
-import traceback
 from unicodedata import name
 from xml.dom import ValidationErr
 from django.shortcuts import render
-from models import Store
-from models import Animal
+from .models import Store
+from .models import Animal
 from django.contrib.auth.decorators import login_required
 from .models import Topic, Topic_intry
 from .forms import TopicForm , TopicEntryForm
@@ -68,4 +66,8 @@ Tracebace(most recent call last):
 ValidationError:{'name':[u'Ensure this value has at most 30 characters(it has 84).']}
 
 """
+
+
+#for clean
+my_store.clean()
 
