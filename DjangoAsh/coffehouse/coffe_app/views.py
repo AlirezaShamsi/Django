@@ -53,11 +53,11 @@ instance1 = Animal()
 instance1.save()
 
 #for delete
-Instance.delete(id = 2)
+##Instance.delete(id = 2)
 
 #clean_fields() this code with erro
-store_corporate = Store(name="This is a very long name for the Corporate store that eceeds the 30 character limit.", address='England - London', city= 'London', state= 'UK', email='almator5@gmail.com')
-store_corporate.clean_fields()
+##store_corporate = Store(name="This is a very long name for the Corporate store that eceeds the 30 character limit.", address='England - London', city= 'London', state= 'UK', email='almator5@gmail.com')
+##store_corporate.clean_fields()
 
 #output:
 """
@@ -69,5 +69,12 @@ ValidationError:{'name':[u'Ensure this value has at most 30 characters(it has 84
 
 
 #for clean
-my_store.clean()
+##my_store.clean()
+
+#output
+'''
+Traceback(most recent call last):
+    raise ValidationError("""Wait London in england!, are you sure there is another london in %s?"""%(self.state))
+ValidationError:[u"""Wait London is in UK!, are you sure there is another London in TE?"""]
+'''
 
