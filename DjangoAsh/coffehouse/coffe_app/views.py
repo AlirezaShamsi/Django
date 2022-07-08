@@ -1,3 +1,4 @@
+import email
 from unicodedata import name
 from xml.dom import ValidationErr
 from django.shortcuts import render
@@ -77,4 +78,9 @@ Traceback(most recent call last):
     raise ValidationError("""Wait London in england!, are you sure there is another london in %s?"""%(self.state))
 ValidationError:[u"""Wait London is in UK!, are you sure there is another London in TE?"""]
 '''
+
+
+store_ashix = Store(name='Ashix', address='Backinghome street - No.666', city='London', state= 'UK', email='Alireza01shamsi@gmail.com')
+
+
 
