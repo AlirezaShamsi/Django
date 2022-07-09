@@ -80,8 +80,12 @@ ValidationError:[u"""Wait London is in UK!, are you sure there is another London
 '''
 
 
+#validate unique
 store_ashix = Store(name='Ashix', address='Backinghome street - No.666', city='London', state= 'UK', email='Alireza01shamsi@gmail.com')
 store_pendar.save()
+
+store_firooz = Store(name='The Firooz Store', address='Rashtchi street - No.50', city='Tehran', state= 'TE')
+store_firooz.validate_unique()
 
 
 
