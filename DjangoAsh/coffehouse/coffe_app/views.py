@@ -81,6 +81,7 @@ ValidationError:[u"""Wait London is in UK!, are you sure there is another London
 
 
 store_ashix = Store(name='Ashix', address='Backinghome street - No.666', city='London', state= 'UK', email='Alireza01shamsi@gmail.com')
+store_pendar.save()
 
 
 
