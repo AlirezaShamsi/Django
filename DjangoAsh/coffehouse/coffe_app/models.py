@@ -1,4 +1,5 @@
 import email
+from enum import unique
 from unicodedata import name
 from django.db import models
 from datetime import date
@@ -71,6 +72,12 @@ class Store(models.Model):
     #add amenity
     ameneties = models.ManyToManyField('Amenity', blank=True)
 
+    #add for unique_together
+    class Meta:
+        unique_together = ("name", "email")
+        #or (a list of tuples):
+        #enforces both city/state and city/zipcode fields are unique together
+        #unique_together = (('city', 'state'),('city', 'zipcode'))
 
     def __str__(self):
         return "%s (%s, %s)"%(self.name, self.city, self.state)
