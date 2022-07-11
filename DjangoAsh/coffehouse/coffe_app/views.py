@@ -1,6 +1,3 @@
-import email
-from unicodedata import name
-from xml.dom import ValidationErr
 from django.shortcuts import render
 from .models import Store
 from .models import Animal
@@ -81,11 +78,18 @@ ValidationError:[u"""Wait London is in UK!, are you sure there is another London
 
 
 #validate unique
-store_ashix = Store(name='Ashix', address='Backinghome street - No.666', city='London', state= 'UK', email='Alireza01shamsi@gmail.com')
-store_pendar.save()
 
-store_firooz = Store(name='The Firooz Store', address='Rashtchi street - No.50', city='Tehran', state= 'TE')
-store_firooz.validate_unique()
+##store_ashix = Store(name='Ashix', address='Backinghome street - No.666', city='London', state= 'UK', email='Alireza01shamsi@gmail.com')
+##store_pendar.save()
+
+##store_firooz = Store(name='The Firooz Store', address='Backinghome street - No.666', city='London', state= 'UK')
+##store_firooz.validate_unique()
+'''
+Traceback(most recent call last):
+    raise ValidationError(errors)
+ValidationError:{'address':[u'Store with this adress already exist']}
+'''
+
 
 
 
