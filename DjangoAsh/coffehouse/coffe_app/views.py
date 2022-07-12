@@ -106,7 +106,7 @@ ValidationError:{'__all__':[u'Store with this Name and Email already exist']}
 '''
 
 
-#read a record from database model Store
+#fetching / read a record from database model Store
 ##ins1 = Store.objects.get(id=3)
 
 #delete all record of Store model database
