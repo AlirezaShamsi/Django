@@ -111,3 +111,6 @@ ValidationError:{'__all__':[u'Store with this Name and Email already exist']}
 
 #delete all record of Store model database
 ##Store.objects.all().delete()
+
+#for edit your custome name this is added to models store class
+##ins1 = Store.mngr.get(id=3)
