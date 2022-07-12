@@ -49,6 +49,8 @@ class Store(models.Model):
 
     ## object variable is added by default, not required explicitly
     #objects = models.Manager()
+    #for edit your custome name---> views.py  ins1 = ins1 = Store.mngr.get(id=3)
+    mngr = models.Manager()
 
     #Add date
     my_date = models.DateField(default=date.today)
