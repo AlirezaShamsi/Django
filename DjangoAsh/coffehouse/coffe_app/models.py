@@ -76,6 +76,7 @@ class Store(models.Model):
 
     #add for unique_together
     class Meta:
+        ordering = ['state']
         unique_together = ("name", "email")
         #or (a list of tuples):
         #enforces both city/state and city/zipcode fields are unique together
