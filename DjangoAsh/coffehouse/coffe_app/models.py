@@ -85,6 +85,12 @@ class Store(models.Model):
         #enforces both city/state and city/zipcode fields are unique together
         #unique_together = (('city', 'state'),('city', 'zipcode'))
 
+        #A two-fieeld index for city and state fields, and an index for the city field named
+        indexes=[
+            models.Index(fields=['city', 'state']),
+            models.Index(fields=['city'], name='city_index')
+        ]
+
     def __str__(self):
         return "%s (%s, %s)"%(self.name, self.city, self.state)
         #also you can use python format function
