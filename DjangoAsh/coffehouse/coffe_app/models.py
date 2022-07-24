@@ -1,6 +1,3 @@
-import email
-from enum import unique
-from unicodedata import name
 from django.db import models
 from datetime import date
 from django.utils import timezone
@@ -90,6 +87,11 @@ class Store(models.Model):
             models.Index(fields=['city', 'state']),
             models.Index(fields=['city'], name='city_index')
         ]
+
+        #Naming Convention : for optional name
+        verbose_name = "Social Security Number"
+        verbose_name_plural = "Social Security Numbers"
+
 
     def __str__(self):
         return "%s (%s, %s)"%(self.name, self.city, self.state)
