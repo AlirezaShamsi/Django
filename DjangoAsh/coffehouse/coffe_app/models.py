@@ -92,6 +92,11 @@ class Store(models.Model):
         verbose_name = "Social Security Number"
         verbose_name_plural = "Social Security Numbers"
 
+        #inheritance Meta Options
+        abstract = True
+    class Drink(Item):
+        mili_liters = models.IntegerField()
+
 
     def __str__(self):
         return "%s (%s, %s)"%(self.name, self.city, self.state)
