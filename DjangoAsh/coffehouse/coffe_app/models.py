@@ -97,9 +97,9 @@ class Store(models.Model):
     class Drink(Item):
         mili_liters = models.IntegerField()
         #Example
-        abstract = True
-    class Student(CommonInfo):
-        home_group = models.CharField(max_length=5)
+        ##abstract = True
+    ##class Student(CommonInfo):
+        ##home_group = models.CharField(max_length=5)
 
 
     def __str__(self):
