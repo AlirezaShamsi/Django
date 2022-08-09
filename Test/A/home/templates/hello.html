@@ -22,7 +22,14 @@
 </head>
 
 <body>
-  <h1><b>Hello (by Adele)
+
+  {% if two == 'Alireza' %}
+    <p> You are {{first}}</p>
+    <h1><b>Hello (by Adele)</b></h1>
+  {% else %}
+    <p> You are {{two | upper}}</p>
+    <h1><b>Hello My Legend
+  {% endif %}
   <script src="js/scripts.js"></script>
 </body>
 </html>

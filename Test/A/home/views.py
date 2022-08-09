@@ -5,5 +5,6 @@ def home(request):
     return render(request, 'home.html')
 
 def say_hello(request):
-    return render(request, 'hello.html')
+    person = {'first': 'Alireza', 'two': 'Multiface',}
+    return render(request, 'hello.html', context=person)
 # Create your views here.
