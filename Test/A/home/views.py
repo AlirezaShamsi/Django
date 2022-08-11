@@ -1,8 +1,12 @@
 from django import http
 from django.shortcuts import render
 
+from .models import Todo
+
 def home(request):
-    return render(request, 'home.html')
+    all = Todo.objects.all()
+    posts = {'posts':all,}
+    return render(request, 'home.html', context=posts)
 
 def say_hello(request):
     person = {'first': 'Alireza', 'two': 'Multiface',}

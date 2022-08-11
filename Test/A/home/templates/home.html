@@ -22,7 +22,15 @@
 </head>
 
 <body>
-  <h1><b>First page
+  <h1><b>First page</b></h1>
+
+</br>
+{% for post in posts %}
+ <h3>{{post.title}}</h3>
+ <h6>{{post.created}}</h6>
+ <h4>{{post.body}}</h4>
+{% endfor %}
+
   <script src="js/scripts.js"></script>
 </body>
 </html>
