@@ -7,9 +7,7 @@
 {% block content %}
 </br>
 {% for post in posts %}
- <h3>{{post.title}}</h3>
- <h6>{{post.created}}</h6>
- <h4>{{post.body}}</h4>
+ <h3><a href="detail/{{ post.id }}"> {{ post.title }} </a></h3></br>
 {% endfor %}
 
 {% endblock %}
