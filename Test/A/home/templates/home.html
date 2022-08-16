@@ -5,9 +5,10 @@
 
 
 {% block content %}
-</br>
-{% for post in posts %}
- <h3><a href="detail/{{ post.id }}"> {{ post.title }} </a></h3></br>
-{% endfor %}
-
+<div class = 'card'>
+    </br>
+    {% for post in posts %}
+        <h3><a class = 'card-body' href="{% url 'detail' post.id %}"> {{ post.title }} </a></h3></br>
+    {% endfor %}
+</div>
 {% endblock %}

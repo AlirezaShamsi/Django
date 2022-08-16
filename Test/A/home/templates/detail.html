@@ -1,7 +1,7 @@
 {% extends 'master.html' %}
 
 {%block content %}
-
+<a href="{% url 'delete' todo.id %}" class="btn btn-danger">Delete</a>
 <h3>{{todo.title}}</h3></hr>
 <h6>{{todo.created}}</h6>
 <h4>{{todo.body}}</h4>
