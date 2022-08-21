@@ -2,8 +2,9 @@
 
 {% block content %}
 <h1>Form</h1>
-<form>
-    {{ form }}
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
     <input class="btn btn-primary" type="submit" value="Submit">
 </form>
 
