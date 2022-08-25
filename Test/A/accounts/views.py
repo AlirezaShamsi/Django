@@ -9,8 +9,11 @@ def user_register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            cd = form.cleaned_data()
-            User.objects.create_user(cd['username'], cd['email'], cd['password'])
+            cd = form.cleaned_data
+            user = User.objects.create_user(cd['username'], cd['email'], cd['password'])
+            user.firstname = cd['first_name']
+            user.lastname = cd['last_name']
+            user.save()
             messages.success(request, 'User registerd successfull', 'success')
             return redirect('home')
 
