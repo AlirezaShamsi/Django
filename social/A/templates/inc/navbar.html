@@ -1,0 +1,41 @@
+{% load static %}
+<div class="row">
+    <nav class="navbar navbar-ashix navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hnav">عشیکس منو</span>
+                <span class="glyphicon glyphicon-grain"></span>
+           </button>
+        </div><!--collapse menu-->
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 collapse navbar-collapse contents menu">
+            <ul class="nav navbar-nav navbar-nav-ashix">
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon icon-dropdown"></span>
+                            <a href="#"><span class="hnav">کوله پشتی</span><span class="icon icon-backpack"></span></a>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">سخت افزار</a></li>
+                            <li><a href="#">سیستم عامل</a></li>
+                            <li><a href="#">نرم افزار</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="about.html">درباره من</a></li>
+                        </ul>
+                    </div><!--dropdown menu-->
+                </li>
+                <li><a href="blog.html"><span class="hnav">بلاگ</span><span class="icon icon-blog"></span></a></li>
+                <li class="active"><a href="index.html"><span class="hnav">خانه</span><span class="icon icon-home"></span></a></li>
+            </ul>
+        </div><!--menu-->
+        <div class="col-lg-2 col-md-2 col-sm-2 col-lg-pull-1 hidden-xs  logo">
+            <img src="{% static 'images/logo.png' %}"><!--65*65-->
+        </div><!--logo-->
+
+        <div class="col-lg-5 col-md-5 col-sm-5 pull-left collapse navbar-collapse search menu">
+            <span class="icon icon-search"></span><input type="search" id="isearch">
+        </div><!--serchbox-->
+    </nav>
+</div><!--nav row-->

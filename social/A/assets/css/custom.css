@@ -1,0 +1,322 @@
+@font-face {
+    font-family: 'Farnaz';
+    src: url('../fonts/BFarnaz.eot'),
+    url('../fonts/BFarnaz.eot?#iefix')format('eot'),
+    url('../fonts/BFarnaz.woff')format('woff'),
+    url('../fonts/BFarnaz.ttf')format('truetype')
+}/*this font for header and article*/
+@font-face {
+    font-family: 'Mahsa';
+    src: url('../fonts/BMahsa.eot'),
+    url('../fonts/BMahsa.eot?#iefix')format('eot'),
+    url('../fonts/BMahsa.woff')format('woff'),
+    url('../fonts/BMahsa.ttf')format('truetype')
+}/*this font for tag and footer*/
+@font-face {
+    font-family: 'Narm';
+    src: url('../fonts/BNarm.eot'),
+    url('../fonts/BNarm.eot?#iefix')format('eot'),
+    url('../fonts/BNarm.woff')format('woff'),
+    url('../fonts/BNarm.ttf')format('truetype')
+}/*this font for navigation*/
+@font-face {
+    font-family: 'Yekan';
+    src: url('../fonts/BYekan.eot'),
+    url('../fonts/BYekan.eot?#iefix')format('eot'),
+    url('../fonts/BYekan.woff')format('woff'),
+    url('../fonts/BYekan.ttf')format('truetype')
+}/*this font for "Content"*/
+
+#isearch{
+    background-color: #affff3;
+    border-radius: 15px;
+}/*serch input*/
+
+/*-----icon creator-----*/
+.icon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+}
+.icon-home:after {
+    content: url("../images/home.png");
+    box-sizing: border-box;
+}
+.icon-blog:after {
+    content: url("../images/blog.png");
+    box-sizing: border-box;
+}
+.icon-backpack:after {
+    content: url("../images/backpack.png");
+    box-sizing: border-box;
+}
+.icon-search:before {
+    content: url("../images/search.png");
+    box-sizing: border-box;
+}
+.icon-dropdown:before{
+    content: url("../images/dropdown.png");
+    box-sizing: border-box;
+}
+/***********************/
+/*navigation font and style*/
+.hnav{
+    font-family: 'Narm';
+    font-size: 1.5em;
+    color: #fffff0;
+}
+/*navbar style*/
+.contents{
+    position: relative;
+    float: right;
+}
+.logo{
+    position: relative;
+    float: right;
+
+}
+.search{
+    position: relative;
+    float: right;
+}
+
+.navbar-ashix {
+    background-color: #1ae05b;
+    border-color: #00aeef;
+    margin-bottom: auto;
+}
+
+.navbar-nav-ashix > li > a {
+    padding-top: 10px;
+    padding-bottom: 3px;
+    line-height: 20px;
+}
+
+
+.btn-default {
+    color: #333;
+    background-color: #1ae05b;
+    border-color: #1ae05b;
+}
+a:hover
+{
+    text-decoration: none;
+
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: #a94442;
+    border-radius: 5px;
+}
+.btn-default:hover {
+    color: #a94442;
+    background-color: #a94442;
+    border-color: #a94442;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    color: #a94442;
+    background-color: #a94442;
+    border-color: #a94442;
+
+}
+.btn-default:active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default.focus {
+    color: #a96760;
+    background-color: #a96760;
+    border-color: #a96760;
+}
+
+.navbar-fixed-top {
+    position: relative;
+}
+
+/************end of menu style*******/
+
+
+/*************footer****************/
+.navbar-fixed-bottom{
+    position: relative;
+}
+.navbar-footer {
+    background-color: #ffffff;
+    border-top: 5px dashed;
+    border-color: #f26522;
+    margin: auto 0 0 auto;
+    float: left;
+
+}
+
+.hfooter{
+    color: #0ea9a7;
+    font-family: 'Mahsa';
+    font-size: 1.5em;
+}
+
+/*************home main*************/
+.wrapper-home{
+    position: relative;
+    float: left;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 40%;
+    direction: rtl;
+}
+.home-blog{
+    color: #ffffff;
+    background-color: #7afc89;
+    border-radius: 10px;
+    font-family: 'Farnaz';
+
+}
+.home-blog a{
+    color: #ffffff;
+
+}
+
+.home-github{
+    color: #ffffff;
+    background-color: #d88fff;
+    border-radius: 10px;
+    font-family: 'Farnaz';
+
+}
+.home-github a{
+    color: #ffffff;
+
+}
+
+.home-about{
+    color: #ffffff;
+    background-color: #f26522;
+    border-radius: 10px;
+    font-family: 'Farnaz';
+
+}
+.home-about a{
+    color: #ffffff;
+
+}
+
+/****************blog style***********/
+.wrapper-blog{
+    position: relative;
+    float: left;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 30%;
+    direction: rtl;
+    width: 40%;
+    background-color: #f0fffd;
+}
+
+.bheader{
+    font-family: 'Farnaz';
+    float: right;
+}
+.bmainheader{
+    background-color: #affff3;
+    border-radius: 20px;
+
+}
+
+.bimg{
+    border-radius: 15px;
+    margin: 25px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cblog{
+    font-family: 'Yekan';
+    font-size: 1.5em;
+    padding-right: 5%;
+}
+.bach{
+    float: left;
+    border-radius: 100%;
+}
+.btn {
+    margin-bottom: 5px;
+    font-size: 12px;
+    text-align: center;
+    cursor: hand;
+    border-radius: 15px;
+}
+
+.fblog{
+    float: right;
+    font-family: 'Mahsa';
+    border-top: 2px #ffdd83 dotted;
+}
+/****************Detail Blog***********/
+.wrapper-dblog{
+    position: relative;
+    float: right;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 5px;
+    direction: rtl;
+    width: 65%;
+    background-color: #f0fffd;
+}
+.dimg{
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cdblog{
+    font-family: 'Yekan';
+    font-size: 1.5em;
+    padding-right: 5%;
+}
+/******************end of detail blog**********/
+
+
+/**************about style****************/
+.wrapper-about{
+    position: relative;
+    float: left;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 30%;
+    direction: rtl;
+    width: 40%;
+    background-color: #f0fffd;
+    border: #ffa61b solid 15px;
+    border-radius: 7px;
+
+}
+
+.cabout{
+    margin: 3% 3% 0;
+    font-family: 'Yekan';
+    font-size: 1.5em;
+    padding-right: 9%;
+}
+.iabout{
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+
+
+
+
+
+

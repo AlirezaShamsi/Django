@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="wrapper-home">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><a href="blog.html"><img src="{% static 'images/home/blog.png' %}" class="img-responsive"></a></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 home-blog"><a href="blog.html"><h3>آخرین مطلب وبلاگ :  </h3></a></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><a href="https://github.com/AlirezaShamsi"><img src="{% static 'images/home/github.png' %}" class="img-responsive"></a></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 home-github"><a href="https://github.com/AlirezaShamsi"><h3>آخرین پروژه فعال :  </h3></a></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><a href="about.html"><img src="{% static 'images/home/about.png' %}" class="img-responsive"></a></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 home-about"><a href="about.html"><h3>در باره من و سایت</h3></a></div>
+    </div>
+</div><!--main wrapper-->
+
+{% endblock%}

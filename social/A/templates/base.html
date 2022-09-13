@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سیستم عامل">
+    <meta name="author" content="Alireza Shamsi">
+    <title>خانه</title>
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <script src="{% static 'js/respond.js' %}"></script>
+
+    <link rel="shortcut icon" href="{% static 'images/ico/favicon.ico' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'images/ico/apple-touch-icon-144-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'images/ico/apple-touch-icon-114-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'images/ico/apple-touch-icon-72-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'images/ico/apple-touch-icon-57-precomposed.png' %}">
+</head>
+<body>
+<div class="container-fluid">
+{% include 'inc/navbar.html' %}
+{% block content %} {% endblock%}
+
+
+<footer class="row navbar-footer navbar-fixed-bottom col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-7 col-lg-offset-5 col-md-7 col-md-offset-5 col-sm-7 col-sm-offset-5 col-xs-7 col-xs-offset-5">
+            <span class="hfooter">استفاده از مطالب سایت آزاد است</span>
+        </div><!--foot header-->
+        <div class="col-lg-5 col-lg-offset-7 col-lg-pull-7 col-md-5 col-md-offset-7 col-md-pull-5 col-sm-5 col-sm-offset-7 col-sm-pull-7 col-xs-5 col-xs-offset-7 col-xs-pull-7">
+            <img src="{% static 'images/ashleaf.png' %}" class="img-responsive">
+        </div><!--foot image-->
+</footer>
+</div><!-- container-->
+<script src="{% static 'http://code.jquery.com/jquery-latest.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
